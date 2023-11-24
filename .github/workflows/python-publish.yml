@@ -28,7 +28,11 @@ jobs:
 
     - name: Publish to Test PyPI
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-      run: twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+      run: |
+        twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
 
     - name: Install and Test on Test PyPI
       run: |
@@ -37,4 +41,8 @@ jobs:
 
     - name: Publish to PyPI
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-      run: twine upload dist/*
+      run: |
+        twine upload dist/*
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
