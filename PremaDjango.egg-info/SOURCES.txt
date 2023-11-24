@@ -9,6 +9,7 @@ PremaDjango/settings.py
 PremaDjango.egg-info/PKG-INFO
 PremaDjango.egg-info/SOURCES.txt
 PremaDjango.egg-info/dependency_links.txt
+PremaDjango.egg-info/requires.txt
 PremaDjango.egg-info/top_level.txt
 your_package_name.egg-info/PKG-INFO
 your_package_name.egg-info/SOURCES.txt
