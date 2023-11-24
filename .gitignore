@@ -7,4 +7,5 @@ env
 
 # Exclude build artifacts
 dist/
+build/
 *.egg-info/
