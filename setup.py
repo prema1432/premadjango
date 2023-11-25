@@ -30,6 +30,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         'Django',
+        'setuptools_scm'
     ],
     author="Premanath",
     author_email="talamarlapremanath143@gmail.com",
