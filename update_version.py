@@ -4,10 +4,14 @@ import subprocess
 from setuptools_scm import get_version
 
 def get_changed_files():
-    # Use git to get the list of changed files
-    changed_files_command = "git diff --name-only --diff-filter=AM HEAD^ HEAD"
-    result = subprocess.run(changed_files_command, shell=True, check=True, capture_output=True, text=True)
-    return result.stdout.strip().split("\n")
+    try:
+        # Use git to get the list of changed files
+        changed_files_command = "git diff --name-only --diff-filter=AM $(git rev-parse HEAD^) HEAD"
+        result = subprocess.run(changed_files_command, shell=True, check=True, capture_output=True, text=True)
+        return result.stdout.strip().split("\n")
+    except subprocess.CalledProcessError as e:
+        print(f"Error getting changed files: {e}")
+        return []
 
 def count_changed_pages(changed_files):
     # Count all changed files, including added ones
@@ -15,7 +19,7 @@ def count_changed_pages(changed_files):
 
 def update_version():
     # Get the version from setuptools_scm
-    current_version = "0.3.1"
+    current_version = "0.4.1"
 
     # Extract only major, minor, and patch
     version_parts = current_version.split('.')
