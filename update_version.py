@@ -15,7 +15,7 @@ def count_changed_pages(changed_files):
 
 def update_version():
     # Get the version from setuptools_scm
-    current_version = get_version()
+    current_version = "0.3.1"
 
     # Extract only major, minor, and patch
     version_parts = current_version.split('.')
