@@ -1,4 +1,4 @@
-name: Publish to PyPI
+name: Auto Update Version and Publish to PyPI
 
 on:
   push:
@@ -23,10 +23,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install setuptools wheel twine setuptools-scm
 
+    - name: Update version
+      run: python update_version.py
+      id: version
+
     - name: Build package
       run: python setup.py sdist bdist_wheel
 
-    - name: Publish to Test PyPI
+    - name: Publish to PyPI
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       run: |
         twine upload --repository-url https://test.pypi.org/legacy/ dist/*
