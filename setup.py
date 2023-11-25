@@ -23,11 +23,17 @@ setup(
     setup_requires=['setuptools_scm'],
     packages=find_packages(),
     install_requires=[
-        'Django',  # Add other default libraries here
+        'Django',
     ],
     author="Premanath",
     author_email="talamarlapremanath143@gmail.com",
     description="My Short Description",
     long_description=long_description,
     long_description_content_type="text/markdown",
+    url="https://github.com/prema1432/premadjango/",
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "Framework :: Django",
+    ],
+    license="MIT",
 )
