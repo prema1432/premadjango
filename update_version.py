@@ -3,8 +3,10 @@
 import subprocess
 from setuptools_scm import get_version
 
+def get_version_without_dev():
+    # Use a version scheme that excludes the development version
+    return get_version(version_scheme="guess-next-dev")
 
-print("get_versionget_version",get_version())
 def get_changed_files():
     try:
         # Use git to get the list of changed files
@@ -20,8 +22,10 @@ def count_changed_pages(changed_files):
     return len(changed_files)
 
 def update_version():
-    # Get the version from setuptools_scm
-    current_version = get_version()
+    # Get the version from setuptools_scm without the development version
+    current_version = get_version_without_dev()
+
+    print("current_versioncurrent_version",current_version)
 
     # Extract only major, minor, and patch
     version_parts = current_version.split('.')
