@@ -18,7 +18,9 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='PremaDjango',
-    version='0.1.9',
+    # version='0.1.9',
+    use_scm_version=True,
+    setup_requires=['setuptools_scm'],
     packages=find_packages(),
     install_requires=[
         'Django',  # Add other default libraries here
