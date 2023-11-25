@@ -3,6 +3,8 @@
 import subprocess
 from setuptools_scm import get_version
 
+
+print("get_versionget_version",get_version())
 def get_changed_files():
     try:
         # Use git to get the list of changed files
@@ -19,7 +21,7 @@ def count_changed_pages(changed_files):
 
 def update_version():
     # Get the version from setuptools_scm
-    current_version = "0.4.1"
+    current_version = get_version()
 
     # Extract only major, minor, and patch
     version_parts = current_version.split('.')
