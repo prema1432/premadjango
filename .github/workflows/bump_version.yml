@@ -25,7 +25,8 @@ jobs:
 
       - name: Bump version
         run: |
-          bump2version patch  # You can use "major" or "minor" instead of "patch" if needed
+          bump2version patch --commit --tag
+
 
       - name: Push changes
         run: |
