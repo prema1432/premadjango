@@ -24,7 +24,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='PremaDjango',
-    version=update_version(),  # Dynamically determine version
+    version="1.0.9",  # Dynamically determine version
     # use_scm_version=True,
     # setup_requires=['setuptools_scm'],
     packages=find_packages(),
