@@ -16,15 +16,15 @@ from setuptools_scm import get_version
 
 from update_version import update_version
 
-print("Version:", get_version())
-print("Version:", update_version())
+# print("Version:", get_version())
+# print("Version:", update_version())
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
     name='PremaDjango',
-    version="1.0.9",  # Dynamically determine version
+    version="2.0.9",  # Dynamically determine version
     # use_scm_version=True,
     # setup_requires=['setuptools_scm'],
     packages=find_packages(),
