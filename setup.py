@@ -12,9 +12,9 @@
 #
 
 from setuptools import setup, find_packages
-from setuptools_scm import get_version
-
-from update_version import update_version
+# from setuptools_scm import get_version
+#
+# from update_version import update_version
 
 # print("Version:", get_version())
 # print("Version:", update_version())
